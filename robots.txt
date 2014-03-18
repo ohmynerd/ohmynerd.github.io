@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://potm.github.io/sitemap.xml 
