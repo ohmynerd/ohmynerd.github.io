@@ -16,4 +16,8 @@
         <loc>http://potm.github.io/robots.txt</loc>
         <lastmod>2014-03-18T10:55:50+09:00</lastmod>
     </url>
+    <url>
+        <loc>http://potm.github.io/whoami/</loc>
+        <lastmod>2014-03-20T17:33:58+09:00</lastmod>
+    </url>
 </urlset>
