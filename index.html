@@ -120,6 +120,87 @@
   
 
 
+<i class="icon-calendar-empty"></i> <time datetime="2014-03-25T16:12:26+09:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time></h5>
+          <div class="row-fluid">
+          
+          <a href="http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/">vagrant w/NFS &amp; Passenger</a></h1>
+      <p>Today I got strange bug when trying to start a Rails app. Passenger keeps trying to say</p>
+
+<figure class='code'><figcaption><span>nginx&#8217;s error log</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='objdump'><span class='line'><span class="x">[ 2014-03-25 06:46:10.6957 931/7ff14a7a9700 Pool2/Implementation.cpp:883 ]: Could not spawn process for group /vagrant/canvas#default: An error occurred while starting up the preloader: it did not write a startup response in time.</span>
+</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::throwPreloaderSpawnException(const string&amp;, Passenger::SpawnException::ErrorKind, Passenger::ApplicationPool2::Spawner::BackgroundIOCapturerPtr&amp;, const DebugDirPtr&amp;)&#39; (SmartSpawner.h:146)</span>
+</span><span class='line'><span class="x">     in &#39;std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&amp;)&#39; (SmartSpawner.h:566)</span>
+</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::startPreloader()&#39; (SmartSpawner.h:206)</span>
+</span><span class='line'><span class="x">     in &#39;virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&amp;)&#39; (SmartSpawner.h:752)</span>
+</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&amp;, const Passenger::ApplicationPool2::Options&amp;, unsigned int)&#39; (Implementation.cpp:804)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>after few tries without success, I were almost going to reinstall my vagrant box. Somehome I came up with the idea of trying to copy Rails app to home folder for the final try. Doing so, Passenger could start normally.
+Wish that I find the gist below sooner.</p>
+
+<p>Source: <a href="https://gist.github.com/mhayes/1660958">https://gist.github.com/mhayes/1660958</a></p>
+
+<p>When using NFS with Vagrant all your files get mounted as the non-vagrant user.  This isn&rsquo;t a huge deal, unless you&rsquo;re using Passenger for development.  In that case because the files are not owned by the &ldquo;vagrant&rdquo; user, Passenger doesn&rsquo;t know where the GEM_HOME should exist.  You&rsquo;ll most likely encounter errors such as Bundler::GitError asking you to run bundle install.</p>
+
+<p>There&rsquo;s several solutions out there that discuss setting the BUNDLE_PATH variable in &ldquo;/vagrant/.bundle/config&rdquo; but that doesn&rsquo;t seem like an ideal solution.  Please refer to nginx.conf file above.  The important lines to note are:</p>
+
+<figure class='code'><figcaption><span>Passenger config for Rails app placed in &#8216;/vagrant&#8217;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="k">passenger_user_switching</span> <span class="no">on</span><span class="p">;</span>
+</span><span class='line'><span class="k">passenger_user</span> <span class="s">vagrant</span><span class="p">;</span>
+</span><span class='line'><span class="k">passenger_default_user</span> <span class="s">vagrant</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This ensures that Passenger always runs as the &ldquo;vagrant&rdquo; user.</p>
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
 <i class="icon-calendar-empty"></i> <time datetime="2014-03-18T00:58:19+09:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time></h5>
           <div class="row-fluid">
           
