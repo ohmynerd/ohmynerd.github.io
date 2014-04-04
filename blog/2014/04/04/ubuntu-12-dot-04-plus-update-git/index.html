@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>vagrant w/NFS &amp; Passenger - Moonwell</title>
+  <title>Ubuntu 12.04 + update git - Moonwell</title>
   <meta name="author" content="Moon">
 
    
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger">
+  <link rel="canonical" href="http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
 
   <header>
   <div class="jumbotron">
-    Vagrant w/NFS &amp; Passenger
+    Ubuntu 12.04 + Update Git
 	<h5>
 
 
@@ -104,47 +104,23 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-03-25T16:12:26+09:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2014-04-04T09:01:23+09:00" pubdate data-updated="true">Apr 4<span>th</span>, 2014</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Today I got strange bug when trying to start a Rails app. Passenger keeps trying to say</p>
+      <p>メモしておく</p>
 
-<figure class='code'><figcaption><span>nginx&#8217;s error log</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='objdump'><span class='line'><span class="x">[ 2014-03-25 06:46:10.6957 931/7ff14a7a9700 Pool2/Implementation.cpp:883 ]: Could not spawn process for group /vagrant/canvas#default: An error occurred while starting up the preloader: it did not write a startup response in time.</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::throwPreloaderSpawnException(const string&amp;, Passenger::SpawnException::ErrorKind, Passenger::ApplicationPool2::Spawner::BackgroundIOCapturerPtr&amp;, const DebugDirPtr&amp;)&#39; (SmartSpawner.h:146)</span>
-</span><span class='line'><span class="x">     in &#39;std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&amp;)&#39; (SmartSpawner.h:566)</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::startPreloader()&#39; (SmartSpawner.h:206)</span>
-</span><span class='line'><span class="x">     in &#39;virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&amp;)&#39; (SmartSpawner.h:752)</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&amp;, const Passenger::ApplicationPool2::Options&amp;, unsigned int)&#39; (Implementation.cpp:804)</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install -y software-properties-common python-software-properties
+</span><span class='line'>sudo add-apt-repository ppa:git-core/ppa
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install git
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>after few tries without success, I were almost going to reinstall my vagrant box. Somehome I came up with the idea of trying to copy Rails app to home folder for the final try. Doing so, Passenger could start normally.
-Wish that I find the gist below sooner.</p>
-
-<p>Source: <a href="https://gist.github.com/mhayes/1660958">https://gist.github.com/mhayes/1660958</a></p>
-
-<p>When using NFS with Vagrant all your files get mounted as the non-vagrant user.  This isn&rsquo;t a huge deal, unless you&rsquo;re using Passenger for development.  In that case because the files are not owned by the &ldquo;vagrant&rdquo; user, Passenger doesn&rsquo;t know where the GEM_HOME should exist.  You&rsquo;ll most likely encounter errors such as Bundler::GitError asking you to run bundle install.</p>
-
-<p>There&rsquo;s several solutions out there that discuss setting the BUNDLE_PATH variable in &ldquo;/vagrant/.bundle/config&rdquo; but that doesn&rsquo;t seem like an ideal solution.  Please refer to nginx.conf file above.  The important lines to note are:</p>
-
-<figure class='code'><figcaption><span>Passenger config for Rails app placed in &#8216;/vagrant&#8217;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="k">passenger_user_switching</span> <span class="no">on</span><span class="p">;</span>
-</span><span class='line'><span class="k">passenger_user</span> <span class="s">vagrant</span><span class="p">;</span>
-</span><span class='line'><span class="k">passenger_default_user</span> <span class="s">vagrant</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This ensures that Passenger always runs as the &ldquo;vagrant&rdquo; user.</p>
 
     </div>
   </div>
@@ -187,10 +163,8 @@ Wish that I find the gist below sooner.</p>
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/blog/2014/03/18/user-shaken/" title="Previous Post: User shaken, it isn't that scary">&laquo; User shaken, it isn't that scary</a>
+            <a class="basic-alignment left" href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/" title="Previous Post: vagrant w/NFS &amp; Passenger">&laquo; vagrant w/NFS &amp; Passenger</a>
           
-          
-            <a class="basic-alignment right" href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/" title="Next Post: Ubuntu 12.04 + update git">Ubuntu 12.04 + update git &raquo;</a>
           
         </p>
       </div>
@@ -228,8 +202,8 @@ Wish that I find the gist below sooner.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/';
-        var disqus_url = 'http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/';
+        var disqus_identifier = 'http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/';
+        var disqus_url = 'http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/';
         var disqus_script = 'embed.js';
       
     (function () {

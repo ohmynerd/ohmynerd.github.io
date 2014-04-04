@@ -4,7 +4,7 @@
   <title><![CDATA[Moonwell]]></title>
   <link href="http://potm.github.io/atom.xml" rel="self"/>
   <link href="http://potm.github.io/"/>
-  <updated>2014-03-25T16:26:57+09:00</updated>
+  <updated>2014-04-04T09:03:14+09:00</updated>
   <id>http://potm.github.io/</id>
   <author>
     <name><![CDATA[Moon]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 12.04 + update git]]></title>
+    <link href="http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/"/>
+    <updated>2014-04-04T09:01:23+09:00</updated>
+    <id>http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git</id>
+    <content type="html"><![CDATA[<p>メモしておく</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install -y software-properties-common python-software-properties
+</span><span class='line'>sudo add-apt-repository ppa:git-core/ppa
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install git
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[vagrant w/NFS &amp; Passenger]]></title>
