@@ -4,7 +4,7 @@
   <title><![CDATA[Moonwell]]></title>
   <link href="http://potm.github.io/atom.xml" rel="self"/>
   <link href="http://potm.github.io/"/>
-  <updated>2014-04-08T10:09:55+09:00</updated>
+  <updated>2014-04-09T09:52:21+09:00</updated>
   <id>http://potm.github.io/</id>
   <author>
     <name><![CDATA[Moon]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sync remote folder]]></title>
+    <link href="http://potm.github.io/blog/2014/04/09/sync-remote-folder/"/>
+    <updated>2014-04-09T09:47:56+09:00</updated>
+    <id>http://potm.github.io/blog/2014/04/09/sync-remote-folder</id>
+    <content type="html"><![CDATA[<p>Sometimes I need to get a copy of remote folder</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rsync -chavzP --stats -e <span class="s1">&#39;ssh -p port_number&#39;</span> user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>in which</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-c: checksum
+</span><span class='line'>-h: human readable
+</span><span class='line'>-a: archive
+</span><span class='line'>-v: verbose
+</span><span class='line'>-z: compress
+</span><span class='line'>-P: partial copy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Another times, I prefer just mounting</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sshfs -p port_number user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenSSL Heartbleed &amp; update fixes]]></title>

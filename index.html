@@ -120,6 +120,81 @@
   
 
 
+<i class="icon-calendar-empty"></i> <time datetime="2014-04-09T09:47:56+09:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
+          <div class="row-fluid">
+          
+          <a href="http://potm.github.io/blog/2014/04/09/sync-remote-folder/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/blog/2014/04/09/sync-remote-folder/">Sync remote folder</a></h1>
+      <p>Sometimes I need to get a copy of remote folder</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rsync -chavzP --stats -e <span class="s1">&#39;ssh -p port_number&#39;</span> user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>in which</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>-c: checksum
+</span><span class='line'>-h: human readable
+</span><span class='line'>-a: archive
+</span><span class='line'>-v: verbose
+</span><span class='line'>-z: compress
+</span><span class='line'>-P: partial copy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Another times, I prefer just mounting</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sshfs -p port_number user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
 <i class="icon-calendar-empty"></i> <time datetime="2014-04-08T10:06:45+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2014</time></h5>
           <div class="row-fluid">
           
