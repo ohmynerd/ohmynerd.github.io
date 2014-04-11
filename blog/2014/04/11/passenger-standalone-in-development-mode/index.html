@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sync remote folder - Moonwell</title>
+  <title>Passenger Standalone in development mode - Moonwell</title>
   <meta name="author" content="Moon">
 
    
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io/blog/2014/04/09/sync-remote-folder">
+  <link rel="canonical" href="http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
 
   <header>
   <div class="jumbotron">
-    Sync Remote Folder
+    Passenger Standalone in Development Mode
 	<h5>
 
 
@@ -104,19 +104,29 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-09T09:47:56+09:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2014-04-11T09:43:17+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2014</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Sometimes I need to get a copy of remote folder</p>
+      <p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
+
+<p>Adding APT repository
+Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signing (<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#x75;&#116;&#x6f;&#x2d;&#115;&#x6f;&#x66;&#x74;&#x77;&#x61;&#x72;&#x65;&#45;&#115;&#105;&#x67;&#110;&#105;&#110;&#103;&#64;&#112;&#x68;&#x75;&#x73;&#x69;&#111;&#x6e;&#46;&#110;&#108;">&#x61;&#117;&#116;&#111;&#45;&#x73;&#x6f;&#102;&#116;&#119;&#x61;&#x72;&#101;&#x2d;&#x73;&#105;&#x67;&#110;&#105;&#x6e;&#103;&#64;&#112;&#x68;&#x75;&#x73;&#105;&#x6f;&#x6e;&#46;&#x6e;&#108;</a>)&rdquo;, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rsync -chavzP --stats -e <span class="s1">&#39;ssh -p port_number&#39;</span> user@ip:remote_folder local_folder
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>in which</p>
+<p>Add HTTPS support for APT</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install apt-transport-https ca-certificates
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Create a file /etc/apt/sources.list.d/passenger.list and insert one of the following lines, depending on your distribution.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -124,19 +134,47 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>-c: checksum
-</span><span class='line'>-h: human readable
-</span><span class='line'>-a: archive
-</span><span class='line'>-v: verbose
-</span><span class='line'>-z: compress
-</span><span class='line'>-P: partial copy
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">##### !!!! Only add ONE of these lines, not all of them !!!! #####</span>
+</span><span class='line'><span class="c"># Ubuntu 13.10</span>
+</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main
+</span><span class='line'><span class="c"># Ubuntu 12.04</span>
+</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main
+</span><span class='line'><span class="c"># Ubuntu 10.04</span>
+</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger lucid main
+</span><span class='line'><span class="c"># Debian 7</span>
+</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger wheezy main
+</span><span class='line'><span class="c"># Debian 6</span>
+</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger squeeze main
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Another times, I prefer just mounting</p>
+<p>Secure passenger.list and update your APT cache:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sshfs -p port_number user@ip:remote_folder local_folder
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo chown root: /etc/apt/sources.list.d/passenger.list
+</span><span class='line'>sudo chmod 600 /etc/apt/sources.list.d/passenger.list
+</span><span class='line'>sudo apt-get update
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Install passenger</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install passenger
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Run passenger in development mode</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvmsudo passenger start -a 0.0.0.0 -p 80 --max-pool-size 1 --spawn-method conservative -e development --user<span class="o">=</span>user_name
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -181,10 +219,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/" title="Previous Post: OpenSSL Heartbleed &amp; update fixes">&laquo; OpenSSL Heartbleed &amp; update fixes</a>
+            <a class="basic-alignment left" href="/blog/2014/04/09/sync-remote-folder/" title="Previous Post: Sync remote folder">&laquo; Sync remote folder</a>
           
-          
-            <a class="basic-alignment right" href="/blog/2014/04/11/passenger-standalone-in-development-mode/" title="Next Post: Passenger Standalone in development mode">Passenger Standalone in development mode &raquo;</a>
           
         </p>
       </div>
@@ -222,8 +258,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://potm.github.io/blog/2014/04/09/sync-remote-folder/';
-        var disqus_url = 'http://potm.github.io/blog/2014/04/09/sync-remote-folder/';
+        var disqus_identifier = 'http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/';
+        var disqus_url = 'http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/';
         var disqus_script = 'embed.js';
       
     (function () {
