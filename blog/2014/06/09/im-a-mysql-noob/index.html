@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Update Gitlab - Moonwell</title>
+  <title>I'm a MySQL noob - Moonwell</title>
   <meta name="author" content="Moon">
 
    
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io/blog/2014/05/23/update-gitlab">
+  <link rel="canonical" href="http://potm.github.io/blog/2014/06/09/im-a-mysql-noob">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
 
   <header>
   <div class="jumbotron">
-    Update Gitlab
+    I'm a MySQL Noob
 	<h5>
 
 
@@ -104,46 +104,28 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-05-23T17:25:07+09:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2014-06-09T13:05:50+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <h2>Gitlab update</h2>
+      <ul>
+<li><p>Install MySQL (Credit to <a href="http://www.macminivault.com/mysql-mavericks/">http://www.macminivault.com/mysql-mavericks/</a>)</p>
 
-<p><strong>Last update: 2014/05/23 17:13 from 6.7 to 6.9-stable</strong></p>
-
-<ul>
-<li>Log in to git account</li>
-<li><p>Backup</p>
-
-<pre><code>  cd ~/gitlab
-  RAILS_ENV=production bundle exec rake gitlab:backup:create
+<pre><code>  bash &lt;(curl -Ls http://git.io/eUx7rg)
 </code></pre></li>
-<li><p>Stop server <code>su - _sudo_user_ -c "sudo service gitlab stop"</code></p></li>
-<li><p>Get code</p>
+<li><p>Change default root password</p>
 
-<pre><code>  cd ~/gitlab
-  git fetch
-  git checkout _stable_branch_
+<pre><code>  mysql -u root -p
+  use mysql;
+  update user set password=PASSWORD("your_new_password") where user='root';
+  flush privileges;
 </code></pre></li>
-<li><p>Update gitlab shell</p>
+<li><p>Create new user</p>
 
-<pre><code>  cd ~/gitlab-shell
-  git fetch
-  git merge _some_version_ # need to merge to preserve local config
-</code></pre></li>
-<li><p>Install gems, migrate</p>
-
-<pre><code>  cd ~/gitlab
-  bundle install --without development test postgres --deployment
-  bundle exec rake db:migrate RAILS_ENV=production
-  bundle exec rake assets:precompile RAILS_ENV=production
-</code></pre></li>
-<li><p>Restart services</p>
-
-<pre><code>  su - _sudo_user_ -c "sudo service gitlab start"
-  su - _sudo_user_ -c "sudo /etc/init.d/nginx restart"
+<pre><code>  create user 'username'@'localhost' identified by 'password';
+  grant all privileges on *.* to 'username'@'localhost';
+  flush privileges;
 </code></pre></li>
 </ul>
 
@@ -189,10 +171,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/blog/2014/04/11/passenger-standalone-in-development-mode/" title="Previous Post: Passenger Standalone in development mode">&laquo; Passenger Standalone in development mode</a>
+            <a class="basic-alignment left" href="/blog/2014/05/23/update-gitlab/" title="Previous Post: Update Gitlab">&laquo; Update Gitlab</a>
           
-          
-            <a class="basic-alignment right" href="/blog/2014/06/09/im-a-mysql-noob/" title="Next Post: I'm a MySQL noob">I'm a MySQL noob &raquo;</a>
           
         </p>
       </div>
@@ -230,8 +210,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://potm.github.io/blog/2014/05/23/update-gitlab/';
-        var disqus_url = 'http://potm.github.io/blog/2014/05/23/update-gitlab/';
+        var disqus_identifier = 'http://potm.github.io/blog/2014/06/09/im-a-mysql-noob/';
+        var disqus_url = 'http://potm.github.io/blog/2014/06/09/im-a-mysql-noob/';
         var disqus_script = 'embed.js';
       
     (function () {
