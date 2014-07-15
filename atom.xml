@@ -4,7 +4,7 @@
   <title><![CDATA[Moonwell]]></title>
   <link href="http://potm.github.io/atom.xml" rel="self"/>
   <link href="http://potm.github.io/"/>
-  <updated>2014-06-09T13:19:07+09:00</updated>
+  <updated>2014-07-15T15:11:30+09:00</updated>
   <id>http://potm.github.io/</id>
   <author>
     <name><![CDATA[Moon]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Go go away trailing spaces]]></title>
+    <link href="http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/"/>
+    <updated>2014-07-15T15:05:21+09:00</updated>
+    <id>http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces</id>
+    <content type="html"><![CDATA[<p>Execute this</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>C find . -not <span class="se">\(</span> -name .svn -prune -o -name .git -prune <span class="se">\)</span> -type f -print0 | xargs -0 sed -i <span class="s1">&#39;&#39;</span> -E <span class="s2">&quot;s/[[:space:]]*$//&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>in which
+* -name name -prune: Exclude named folder
+* -or: OR operation
+* -0: seperate by NULL
+* -E: no eof trailing
+* export LC_ALL=C: treat strings as if each byte were its own characters</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[I'm a MySQL noob]]></title>
@@ -95,7 +116,7 @@
     <content type="html"><![CDATA[<p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
 
 <p>Adding APT repository
-Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signing (<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x61;&#117;&#x74;&#111;&#x2d;&#115;&#x6f;&#x66;&#116;&#119;&#97;&#114;&#101;&#x2d;&#115;&#105;&#x67;&#110;&#x69;&#110;&#103;&#64;&#x70;&#x68;&#117;&#x73;&#x69;&#x6f;&#x6e;&#46;&#x6e;&#x6c;">&#97;&#117;&#x74;&#111;&#x2d;&#x73;&#x6f;&#x66;&#x74;&#x77;&#x61;&#x72;&#101;&#45;&#x73;&#105;&#103;&#x6e;&#105;&#110;&#x67;&#x40;&#112;&#x68;&#x75;&#x73;&#x69;&#111;&#x6e;&#46;&#x6e;&#108;</a>)&rdquo;, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
+Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signing (<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x61;&#117;&#116;&#111;&#45;&#115;&#x6f;&#102;&#x74;&#119;&#x61;&#x72;&#101;&#x2d;&#x73;&#105;&#x67;&#110;&#105;&#110;&#x67;&#64;&#112;&#104;&#x75;&#x73;&#105;&#111;&#x6e;&#46;&#110;&#108;">&#x61;&#117;&#x74;&#x6f;&#x2d;&#115;&#x6f;&#102;&#x74;&#119;&#97;&#x72;&#x65;&#x2d;&#115;&#105;&#103;&#110;&#x69;&#x6e;&#103;&#x40;&#x70;&#104;&#117;&#115;&#105;&#x6f;&#110;&#46;&#110;&#x6c;</a>)&rdquo;, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7

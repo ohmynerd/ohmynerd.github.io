@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Passenger Standalone in development mode - Moonwell</title>
+  <title>Go go away trailing spaces - Moonwell</title>
   <meta name="author" content="Moon">
 
    
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode">
+  <link rel="canonical" href="http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
 
   <header>
   <div class="jumbotron">
-    Passenger Standalone in Development Mode
+    Go Go Away Trailing Spaces
 	<h5>
 
 
@@ -104,79 +104,24 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-11T09:43:17+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2014</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2014-07-15T15:05:21+09:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
-
-<p>Adding APT repository
-Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signing (<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x61;&#117;&#116;&#111;&#45;&#115;&#x6f;&#102;&#x74;&#119;&#x61;&#x72;&#101;&#x2d;&#x73;&#105;&#x67;&#110;&#105;&#110;&#x67;&#64;&#112;&#104;&#x75;&#x73;&#105;&#111;&#x6e;&#46;&#110;&#108;">&#x61;&#117;&#x74;&#x6f;&#x2d;&#115;&#x6f;&#102;&#x74;&#119;&#97;&#x72;&#x65;&#x2d;&#115;&#105;&#103;&#110;&#x69;&#x6e;&#103;&#x40;&#x70;&#104;&#117;&#115;&#105;&#x6f;&#110;&#46;&#110;&#x6c;</a>)&rdquo;, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
+      <p>Execute this</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>C find . -not <span class="se">\(</span> -name .svn -prune -o -name .git -prune <span class="se">\)</span> -type f -print0 | xargs -0 sed -i <span class="s1">&#39;&#39;</span> -E <span class="s2">&quot;s/[[:space:]]*$//&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Add HTTPS support for APT</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install apt-transport-https ca-certificates
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Create a file /etc/apt/sources.list.d/passenger.list and insert one of the following lines, depending on your distribution.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">##### !!!! Only add ONE of these lines, not all of them !!!! #####</span>
-</span><span class='line'><span class="c"># Ubuntu 13.10</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main
-</span><span class='line'><span class="c"># Ubuntu 12.04</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main
-</span><span class='line'><span class="c"># Ubuntu 10.04</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger lucid main
-</span><span class='line'><span class="c"># Debian 7</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger wheezy main
-</span><span class='line'><span class="c"># Debian 6</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger squeeze main
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Secure passenger.list and update your APT cache:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo chown root: /etc/apt/sources.list.d/passenger.list
-</span><span class='line'>sudo chmod 600 /etc/apt/sources.list.d/passenger.list
-</span><span class='line'>sudo apt-get update
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Install passenger</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install passenger
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Run passenger in development mode</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvmsudo passenger start -a 0.0.0.0 -p 80 --max-pool-size 1 --spawn-method conservative -e development --user<span class="o">=</span>user_name
-</span></code></pre></td></tr></table></div></figure>
-
+<p>in which
+* -name name -prune: Exclude named folder
+* -or: OR operation
+* -0: seperate by NULL
+* -E: no eof trailing
+* export LC_ALL=C: treat strings as if each byte were its own characters</p>
 
     </div>
   </div>
@@ -219,10 +164,8 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/blog/2014/04/09/sync-remote-folder/" title="Previous Post: Sync remote folder">&laquo; Sync remote folder</a>
+            <a class="basic-alignment left" href="/blog/2014/06/09/im-a-mysql-noob/" title="Previous Post: I'm a MySQL noob">&laquo; I'm a MySQL noob</a>
           
-          
-            <a class="basic-alignment right" href="/blog/2014/05/23/update-gitlab/" title="Next Post: Update Gitlab">Update Gitlab &raquo;</a>
           
         </p>
       </div>
@@ -260,8 +203,8 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/';
-        var disqus_url = 'http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/';
+        var disqus_identifier = 'http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/';
+        var disqus_url = 'http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/';
         var disqus_script = 'embed.js';
       
     (function () {
