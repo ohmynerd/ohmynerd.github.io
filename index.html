@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="ja"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>Moonwell</title>
   <meta name="author" content="Moon">
 
-   
-  <meta name="description" content="">
   
-  <meta name="keywords" content="">
+  <meta name="description" content="Execute this 1
+export LC_ALL=C find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i &#39;&#39; -E &quot;s/[[: &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,21 +19,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io">
+  <link rel="canonical" href="http://potm.github.io/">
   <link href="/favicon.png" rel="icon">
-  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Moonwell" type="application/atom+xml">
-  <script src="/js/jquery.js"></script>
-  <script src="/js/bootstrap-collapse.js"></script>
-  <script src="/js/modernizr-2.0.js"></script>
-  <script src="/js/octopress.js" type="text/javascript"></script>
-  <script src="/js/application.js"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -42,7 +36,7 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
@@ -50,188 +44,202 @@
 
 </head>
 
-<body   >
-  <div class="navbar navbar-inverse navbar-static-top">
-  	<div class="navbar-inner">
-  	  <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="fui-menu-24"></span>
-        </a>
-  	  	<div class="nav-collapse collapse navbar-responsive-collapse" style="height:0;">
-  	      <ul class="nav">
-    
-        <li class="active"><a href="/index.html">Home</a></li>
-    
-        <li ><a href="/whoami/index.html">whoami</a></li>
-    
+<body >
+  <div id="container">
+    <header role="banner"><hgroup>
+  <h1><a href="/">Moonwell</a></h1>
+  
+    <h2>忘れないうちにメモ</h2>
+  
+</hgroup>
+
+</header>
+    <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:potm.github.io" />
+    <input class="search" type="text" name="sitesearch" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
 </ul>
 
-<ul class="nav pull-right">
+</nav>
+    <div id="main">
+      <div id="content">
+        <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/15/go-go-away-trailing-spaces/">Go Go Away Trailing Spaces</a></h1>
     
     
-    
-    
-    
-    
-    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-07-15T15:05:21+09:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/07/15/go-go-away-trailing-spaces/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
     
+  </header>
+
+
+  <div class="entry-content"><p>Execute this</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>C find . -not <span class="se">\(</span> -name .svn -prune -o -name .git -prune <span class="se">\)</span> -type f -print0 | xargs -0 sed -i <span class="s1">&#39;&#39;</span> -E <span class="s2">&quot;s/[[:space:]]*$//&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>in which</p>
+
+<pre><code>    -name name -prune: Exclude named folder
+    -or: OR operation
+    -0: seperate by NULL
+    -E: no eof trailing
+    export LC_ALL=C: treat strings as if each byte were its own characters
+</code></pre>
+</div>
+  
+  
+
+
+      <footer>
+      
+      - <a href="/blog/2014/07/15/go-go-away-trailing-spaces/">Go go away trailing spaces</a>
+      <time datetime="2014-07-15T15:05:21+09:00" pubdate><span class='month'>Jul</span> <span class='day'>15</span> <span class='year'>2014</span></time>
+      
+      </footer>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/09/im-a-mysql-noob/">I&#8217;m a MySQL Noob</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-06-09T13:05:50+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/06/09/im-a-mysql-noob/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+  <li>Install MySQL (Credit to http://www.macminivault.com/mysql-mavericks/)</li>
 </ul>
 
-  	    </div>
-  	  </div>
-  	</div>
-  </div>
-  <div class="container" id="main">
-      <div class="row-fluid">
-        <div id="content">
-          <div class="jumbotron">
-  <div class="container">
-    
-      Moonwell
-    
-    <h3 class="tagline">
-      
-        忘れないうちにメモ
-      
-    </h3>
-  </div>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>bash &lt;(curl -Ls http://git.io/eUx7rg)
+</pre></td>
+</tr></table>
 </div>
 
-
-<div class="blog-index">
-  
-  
-  
-    <article>
-      
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
-
-
-
-
-
-
-
-
-  
-
-
-<i class="icon-calendar-empty"></i> <time datetime="2014-07-15T15:05:21+09:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/07/15/go-go-away-trailing-spaces/">Go go away trailing spaces</a></h1>
-      <p>Execute this</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>C find . -not <span class="se">\(</span> -name .svn -prune -o -name .git -prune <span class="se">\)</span> -type f -print0 | xargs -0 sed -i <span class="s1">&#39;&#39;</span> -E <span class="s2">&quot;s/[[:space:]]*$//&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>in which
-* -name name -prune: Exclude named folder
-* -or: OR operation
-* -0: seperate by NULL
-* -E: no eof trailing
-* export LC_ALL=C: treat strings as if each byte were its own characters</p>
-
-      
-      
-    </div>
-  </div>
-
-
-
-    </article>
-    
-    <hr>
-    
-  
-  
-    <article>
-      
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
-
-
-
-
-
-
-
-
-  
-
-
-<i class="icon-calendar-empty"></i> <time datetime="2014-06-09T13:05:50+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/06/09/im-a-mysql-noob/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/06/09/im-a-mysql-noob/">I&#8217;m a MySQL noob</a></h1>
-      <ul>
-<li><p>Install MySQL (Credit to <a href="http://www.macminivault.com/mysql-mavericks/">http://www.macminivault.com/mysql-mavericks/</a>)</p>
-
-<pre><code>  bash &lt;(curl -Ls http://git.io/eUx7rg)
-</code></pre></li>
-<li><p>Change default root password</p>
-
-<pre><code>  mysql -u root -p
-  use mysql;
-  update user set password=PASSWORD("your_new_password") where user='root';
-  flush privileges;
-</code></pre></li>
-<li><p>Create new user</p>
-
-<pre><code>  create user 'username'@'localhost' identified by 'password';
-  grant all privileges on *.* to 'username'@'localhost';
-  flush privileges;
-</code></pre></li>
+<ul>
+  <li>Change default root password</li>
 </ul>
 
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>mysql -u root -p
+use mysql;
+update user set password=PASSWORD(&quot;your_new_password&quot;) where user='root';
+flush privileges;
+</pre></td>
+</tr></table>
+</div>
 
+<ul>
+  <li>Create new user</li>
+</ul>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>create user <span class="string"><span class="delimiter">'</span><span class="content">username</span><span class="delimiter">'</span></span><span class="error">@</span><span class="string"><span class="delimiter">'</span><span class="content">localhost</span><span class="delimiter">'</span></span> identified by <span class="string"><span class="delimiter">'</span><span class="content">password</span><span class="delimiter">'</span></span>;
+grant <span class="predefined">all</span> privileges on *.* to <span class="string"><span class="delimiter">'</span><span class="content">username</span><span class="delimiter">'</span></span><span class="error">@</span><span class="string"><span class="delimiter">'</span><span class="content">localhost</span><span class="delimiter">'</span></span>;
+flush privileges;
+</pre></td>
+</tr></table>
+</div>
+
+</div>
+  
+  
+
+
+      <footer>
       
+      - <a href="/blog/2014/06/09/im-a-mysql-noob/">I&#8217;m a MySQL noob</a>
+      <time datetime="2014-06-09T13:05:50+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/23/update-gitlab/">Update Gitlab</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -243,78 +251,104 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-05-23T17:25:07+09:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time></h5>
-          <div class="row-fluid">
+
+<time datetime="2014-05-23T17:25:07+09:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time> -</span>
           
-          <a href="http://potm.github.io/blog/2014/05/23/update-gitlab/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          | <a href="/blog/2014/05/23/update-gitlab/#disqus_thread">Comments</a>
           
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/05/23/update-gitlab/">Update Gitlab</a></h1>
-      <h2>Gitlab update</h2>
+        </p>
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="gitlab-update">Gitlab update</h2>
 
 <p><strong>Last update: 2014/05/23 17:13 from 6.7 to 6.9-stable</strong></p>
 
 <ul>
-<li>Log in to git account</li>
-<li><p>Backup</p>
-
-<pre><code>  cd ~/gitlab
-  RAILS_ENV=production bundle exec rake gitlab:backup:create
-</code></pre></li>
-<li><p>Stop server <code>su - _sudo_user_ -c "sudo service gitlab stop"</code></p></li>
-<li><p>Get code</p>
-
-<pre><code>  cd ~/gitlab
-  git fetch
-  git checkout _stable_branch_
-</code></pre></li>
-<li><p>Update gitlab shell</p>
-
-<pre><code>  cd ~/gitlab-shell
-  git fetch
-  git merge _some_version_ # need to merge to preserve local config
-</code></pre></li>
-<li><p>Install gems, migrate</p>
-
-<pre><code>  cd ~/gitlab
-  bundle install --without development test postgres --deployment
-  bundle exec rake db:migrate RAILS_ENV=production
-  bundle exec rake assets:precompile RAILS_ENV=production
-</code></pre></li>
-<li><p>Restart services</p>
-
-<pre><code>  su - _sudo_user_ -c "sudo service gitlab start"
-  su - _sudo_user_ -c "sudo /etc/init.d/nginx restart"
-</code></pre></li>
+  <li>Log in to git account</li>
+  <li>Backup</li>
 </ul>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span> ~/gitlab
+</span><span class="line"><span class="nv">RAILS_ENV</span><span class="o">=</span>production bundle <span class="nb">exec </span>rake gitlab:backup:create
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<ul>
+  <li>Stop server <code>su - _sudo_user_ -c "sudo service gitlab stop"</code></li>
+  <li>Get code</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span> ~/gitlab
+</span><span class="line">git fetch
+</span><span class="line">git checkout _stable_branch_
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Update gitlab shell</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span> ~/gitlab-shell
+</span><span class="line">git fetch
+</span><span class="line">git merge _some_version_ <span class="c"># need to merge to preserve local config</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Install gems, migrate</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span> ~/gitlab
+</span><span class="line">bundle install --without development <span class="nb">test </span>postgres --deployment
+</span><span class="line">bundle <span class="nb">exec </span>rake db:migrate <span class="nv">RAILS_ENV</span><span class="o">=</span>production
+</span><span class="line">bundle <span class="nb">exec </span>rake assets:precompile <span class="nv">RAILS_ENV</span><span class="o">=</span>production
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Restart services</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">su - _sudo_user_ -c <span class="s2">&quot;sudo service gitlab start&quot;</span>
+</span><span class="line">su - _sudo_user_ -c <span class="s2">&quot;sudo /etc/init.d/nginx restart&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
+
+
+      <footer>
       
+      - <a href="/blog/2014/05/23/update-gitlab/">Update Gitlab</a>
+      <time datetime="2014-05-23T17:25:07+09:00" pubdate><span class='month'>May</span> <span class='day'>23</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/11/passenger-standalone-in-development-mode/">Passenger Standalone in Development Mode</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -326,108 +360,103 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-11T09:43:17+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
+
+<time datetime="2014-04-11T09:43:17+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2014</time> -</span>
           
-          <a href="http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          | <a href="/blog/2014/04/11/passenger-standalone-in-development-mode/#disqus_thread">Comments</a>
           
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/04/11/passenger-standalone-in-development-mode/">Passenger Standalone in development mode</a></h1>
-      <p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
+        </p>
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
 
 <p>Adding APT repository
-Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signing (<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x61;&#117;&#116;&#111;&#45;&#115;&#x6f;&#102;&#x74;&#119;&#x61;&#x72;&#101;&#x2d;&#x73;&#105;&#x67;&#110;&#105;&#110;&#x67;&#64;&#112;&#104;&#x75;&#x73;&#105;&#111;&#x6e;&#46;&#110;&#108;">&#x61;&#117;&#x74;&#x6f;&#x2d;&#115;&#x6f;&#102;&#x74;&#119;&#97;&#x72;&#x65;&#x2d;&#115;&#105;&#103;&#110;&#x69;&#x6e;&#103;&#x40;&#x70;&#104;&#117;&#115;&#105;&#x6f;&#110;&#46;&#110;&#x6c;</a>)&rdquo;, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
+Install PGP key. Packages are signed by “Phusion Automated Software Signing (auto-software-signing@phusion.nl)”, fingerprint 1637 8A33 A6EF 1676 2922 526E 561F 9B9C AC40 B2F7.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Add HTTPS support for APT</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install apt-transport-https ca-certificates
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo apt-get install apt-transport-https ca-certificates
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Create a file /etc/apt/sources.list.d/passenger.list and insert one of the following lines, depending on your distribution.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">##### !!!! Only add ONE of these lines, not all of them !!!! #####</span>
-</span><span class='line'><span class="c"># Ubuntu 13.10</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main
-</span><span class='line'><span class="c"># Ubuntu 12.04</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main
-</span><span class='line'><span class="c"># Ubuntu 10.04</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger lucid main
-</span><span class='line'><span class="c"># Debian 7</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger wheezy main
-</span><span class='line'><span class="c"># Debian 6</span>
-</span><span class='line'>deb https://oss-binaries.phusionpassenger.com/apt/passenger squeeze main
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">##### !!!! Only add ONE of these lines, not all of them !!!! #####</span>
+</span><span class="line"><span class="c"># Ubuntu 13.10</span>
+</span><span class="line">deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main
+</span><span class="line"><span class="c"># Ubuntu 12.04</span>
+</span><span class="line">deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main
+</span><span class="line"><span class="c"># Ubuntu 10.04</span>
+</span><span class="line">deb https://oss-binaries.phusionpassenger.com/apt/passenger lucid main
+</span><span class="line"><span class="c"># Debian 7</span>
+</span><span class="line">deb https://oss-binaries.phusionpassenger.com/apt/passenger wheezy main
+</span><span class="line"><span class="c"># Debian 6</span>
+</span><span class="line">deb https://oss-binaries.phusionpassenger.com/apt/passenger squeeze main
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Secure passenger.list and update your APT cache:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo chown root: /etc/apt/sources.list.d/passenger.list
-</span><span class='line'>sudo chmod 600 /etc/apt/sources.list.d/passenger.list
-</span><span class='line'>sudo apt-get update
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo chown root: /etc/apt/sources.list.d/passenger.list
+</span><span class="line">sudo chmod 600 /etc/apt/sources.list.d/passenger.list
+</span><span class="line">sudo apt-get update
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Install passenger</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install passenger
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo apt-get install passenger
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Run passenger in development mode</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvmsudo passenger start -a 0.0.0.0 -p 80 --max-pool-size 1 --spawn-method conservative -e development --user<span class="o">=</span>user_name
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rvmsudo passenger start -a 0.0.0.0 -p 80 --max-pool-size 1 --spawn-method conservative -e development --user<span class="o">=</span>user_name
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
 
 
+      <footer>
       
+      - <a href="/blog/2014/04/11/passenger-standalone-in-development-mode/">Passenger Standalone in development mode</a>
+      <time datetime="2014-04-11T09:43:17+09:00" pubdate><span class='month'>Apr</span> <span class='day'>11</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/09/sync-remote-folder/">Sync Remote Folder</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -439,70 +468,68 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-09T09:47:56+09:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/04/09/sync-remote-folder/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/04/09/sync-remote-folder/">Sync remote folder</a></h1>
-      <p>Sometimes I need to get a copy of remote folder</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rsync -chavzP --stats -e <span class="s1">&#39;ssh -p port_number&#39;</span> user@ip:remote_folder local_folder
-</span></code></pre></td></tr></table></div></figure>
+<time datetime="2014-04-09T09:47:56+09:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/04/09/sync-remote-folder/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
 
+
+  <div class="entry-content"><p>Sometimes I need to get a copy of remote folder</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rsync -chavzP --stats -e <span class="s1">&#39;ssh -p port_number&#39;</span> user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>in which</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>-c: checksum
-</span><span class='line'>-h: human readable
-</span><span class='line'>-a: archive
-</span><span class='line'>-v: verbose
-</span><span class='line'>-z: compress
-</span><span class='line'>-P: partial copy
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">-c: checksum
+</span><span class="line">-h: human readable
+</span><span class="line">-a: archive
+</span><span class="line">-v: verbose
+</span><span class="line">-z: compress
+</span><span class="line">-P: partial copy
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>However, I prefer just mounting</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sshfs -p port_number user@ip:remote_folder local_folder
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
 
 
-<p>Another times, I prefer just mounting</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sshfs -p port_number user@ip:remote_folder local_folder
-</span></code></pre></td></tr></table></div></figure>
-
-
+      <footer>
       
+      - <a href="/blog/2014/04/09/sync-remote-folder/">Sync remote folder</a>
+      <time datetime="2014-04-09T09:47:56+09:00" pubdate><span class='month'>Apr</span> <span class='day'>09</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/">OpenSSL Heartbleed &amp; Update Fixes</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -514,61 +541,62 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-08T10:06:45+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/">OpenSSL Heartbleed &amp; update fixes</a></h1>
-      <p>Details here</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://heartbleed.com/</span></code></pre></td></tr></table></div></figure>
+<time datetime="2014-04-08T10:06:45+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
 
+
+  <div class="entry-content"><p>Details here</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">http://heartbleed.com/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Update fix in Ubuntu 12.04</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo apt-get update
+</span><span class="line">sudo apt-get upgrade
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>OSX</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>brew update
-</span><span class='line'>brew install openssl</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">brew update
+</span><span class="line">brew install openssl
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
 
 
+      <footer>
       
+      - <a href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/">OpenSSL Heartbleed &amp; update fixes</a>
+      <time datetime="2014-04-08T10:06:45+09:00" pubdate><span class='month'>Apr</span> <span class='day'>08</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/">Ubuntu 12.04 + Update Git</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -580,52 +608,52 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-04-04T09:01:23+09:00" pubdate data-updated="true">Apr 4<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/">Ubuntu 12.04 + update git</a></h1>
-      <p>メモしておく</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install -y software-properties-common python-software-properties
-</span><span class='line'>sudo add-apt-repository ppa:git-core/ppa
-</span><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get install git
-</span></code></pre></td></tr></table></div></figure>
+<time datetime="2014-04-04T09:01:23+09:00" pubdate data-updated="true">Apr 4<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
 
 
+  <div class="entry-content"><p>メモしておく</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo apt-get install -y software-properties-common python-software-properties
+</span><span class="line">sudo add-apt-repository ppa:git-core/ppa
+</span><span class="line">sudo apt-get update
+</span><span class="line">sudo apt-get install git
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</div>
+  
+  
+
+
+      <footer>
       
+      - <a href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/">Ubuntu 12.04 + update git</a>
+      <time datetime="2014-04-04T09:01:23+09:00" pubdate><span class='month'>Apr</span> <span class='day'>04</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/">Vagrant w/NFS &amp; Passenger</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -637,76 +665,73 @@ Install PGP key. Packages are signed by &ldquo;Phusion Automated Software Signin
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-03-25T16:12:26+09:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
-          
-          <a href="http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
-          
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/">vagrant w/NFS &amp; Passenger</a></h1>
-      <p>Today I got strange bug when trying to start a Rails app. Passenger keeps trying to say</p>
 
-<figure class='code'><figcaption><span>nginx&#8217;s error log</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='objdump'><span class='line'><span class="x">[ 2014-03-25 06:46:10.6957 931/7ff14a7a9700 Pool2/Implementation.cpp:883 ]: Could not spawn process for group /vagrant/canvas#default: An error occurred while starting up the preloader: it did not write a startup response in time.</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::throwPreloaderSpawnException(const string&amp;, Passenger::SpawnException::ErrorKind, Passenger::ApplicationPool2::Spawner::BackgroundIOCapturerPtr&amp;, const DebugDirPtr&amp;)&#39; (SmartSpawner.h:146)</span>
-</span><span class='line'><span class="x">     in &#39;std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&amp;)&#39; (SmartSpawner.h:566)</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::SmartSpawner::startPreloader()&#39; (SmartSpawner.h:206)</span>
-</span><span class='line'><span class="x">     in &#39;virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&amp;)&#39; (SmartSpawner.h:752)</span>
-</span><span class='line'><span class="x">     in &#39;void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&amp;, const Passenger::ApplicationPool2::Options&amp;, unsigned int)&#39; (Implementation.cpp:804)</span>
-</span></code></pre></td></tr></table></div></figure>
+<time datetime="2014-03-25T16:12:26+09:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time> -</span>
+          
+          | <a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
 
+
+  <div class="entry-content"><p>Today I got strange bug when trying to start a Rails app. Passenger keeps trying to say</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>objdump nginx&#8217;s error log</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">[</span> 2014-03-25 06:46:10.6957 931/7ff14a7a9700 Pool2/Implementation.cpp:883 <span class="o">]</span>: Could not spawn process <span class="k">for </span>group /vagrant/canvas#default: An error occurred <span class="k">while </span>starting up the preloader: it did not write a startup response in time.
+</span><span class="line">     in <span class="s1">&#39;void Passenger::ApplicationPool2::SmartSpawner::throwPreloaderSpawnException(const string&amp;, Passenger::SpawnException::ErrorKind, Passenger::ApplicationPool2::Spawner::BackgroundIOCapturerPtr&amp;, const DebugDirPtr&amp;)&#39;</span> <span class="o">(</span>SmartSpawner.h:146<span class="o">)</span>
+</span><span class="line">     in <span class="s1">&#39;std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&amp;)&#39;</span> <span class="o">(</span>SmartSpawner.h:566<span class="o">)</span>
+</span><span class="line">     in <span class="s1">&#39;void Passenger::ApplicationPool2::SmartSpawner::startPreloader()&#39;</span> <span class="o">(</span>SmartSpawner.h:206<span class="o">)</span>
+</span><span class="line">     in <span class="s1">&#39;virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&amp;)&#39;</span> <span class="o">(</span>SmartSpawner.h:752<span class="o">)</span>
+</span><span class="line">     in <span class="s1">&#39;void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&amp;, const Passenger::ApplicationPool2::Options&amp;, unsigned int)&#39;</span> <span class="o">(</span>Implementation.cpp:804<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>after few tries without success, I were almost going to reinstall my vagrant box. Somehome I came up with the idea of trying to copy Rails app to home folder for the final try. Doing so, Passenger could start normally.
 Wish that I find the gist below sooner.</p>
 
-<p>Source: <a href="https://gist.github.com/mhayes/1660958">https://gist.github.com/mhayes/1660958</a></p>
+<blockquote><p>When using NFS with Vagrant all your files get mounted as the non-vagrant user.  This isn&#8217;t a huge deal, unless you&#8217;re using Passenger for development.  In that case because the files are not owned by the &#8220;vagrant&#8221; user, Passenger doesn&#8217;t know where the GEM_HOME should exist.  You&#8217;ll most likely encounter errors such as Bundler::GitError asking you to run bundle install.</p><p>There&#8217;s several solutions out there that discuss setting the BUNDLE_PATH variable in &#8220;/vagrant/.bundle/config&#8221; but that doesn&#8217;t seem like an ideal solution.  Please refer to nginx.conf file above.</p><footer><strong>Source:</strong> <cite><a href="https://gist.github.com/mhayes/1660958">gist.github.com/mhayes/1660958/&hellip;</a></cite></footer></blockquote>
 
-<p>When using NFS with Vagrant all your files get mounted as the non-vagrant user.  This isn&rsquo;t a huge deal, unless you&rsquo;re using Passenger for development.  In that case because the files are not owned by the &ldquo;vagrant&rdquo; user, Passenger doesn&rsquo;t know where the GEM_HOME should exist.  You&rsquo;ll most likely encounter errors such as Bundler::GitError asking you to run bundle install.</p>
+<p>The important lines to note are:</p>
 
-<p>There&rsquo;s several solutions out there that discuss setting the BUNDLE_PATH variable in &ldquo;/vagrant/.bundle/config&rdquo; but that doesn&rsquo;t seem like an ideal solution.  Please refer to nginx.conf file above.  The important lines to note are:</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>nginx Passenger config for Rails app placed in &#8216;/vagrant&#8217;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">passenger_user_switching on;
+</span><span class="line">passenger_user vagrant;
+</span><span class="line">passenger_default_user vagrant;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><figcaption><span>Passenger config for Rails app placed in &#8216;/vagrant&#8217;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="k">passenger_user_switching</span> <span class="no">on</span><span class="p">;</span>
-</span><span class='line'><span class="k">passenger_user</span> <span class="s">vagrant</span><span class="p">;</span>
-</span><span class='line'><span class="k">passenger_default_user</span> <span class="s">vagrant</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>This ensures that Passenger always runs as the “vagrant” user.</p>
+</div>
+  
+  
 
 
-<p>This ensures that Passenger always runs as the &ldquo;vagrant&rdquo; user.</p>
-
+      <footer>
       
+      - <a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/">vagrant w/NFS &amp; Passenger</a>
+      <time datetime="2014-03-25T16:12:26+09:00" pubdate><span class='month'>Mar</span> <span class='day'>25</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
-    <hr>
-    
   
   
     <article>
       
-
-  <div class="row-fluid">
-    <div class="span2 post-meta">
-	  <h5 class="date-time">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/18/user-shaken/">User Shaken, It Isn&#8217;t That Scary</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
 
 
 
@@ -718,137 +743,182 @@ Wish that I find the gist below sooner.</p>
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-03-18T00:58:19+09:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time></h5>
-          <div class="row-fluid">
+
+<time datetime="2014-03-18T00:58:19+09:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time> -</span>
           
-          <a href="http://potm.github.io/blog/2014/03/18/user-shaken/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          | <a href="/blog/2014/03/18/user-shaken/#disqus_thread">Comments</a>
           
-          </div>
-          
-          <div class="row-fluid">
-          
-          </div>
-          
-    </div>
-    <div class="span10 post-container">
-      <h1 class="link"><a href="/blog/2014/03/18/user-shaken/">User shaken, it isn&#8217;t that scary</a></h1>
-      <p>Shaken, 車検, hay hiểu nôm na là Kiểm định xe, là việc bắt buộc phải làm 2 năm 1 lần với xe cũ (đối với xe mới là 3 năm sau khi đăng ký, và từ đó 2 năm/lần).
-Ấn tượng ban đầu của mình về vụ này là &hellip; cực kì phiền toái và tốn kém (giang hồ đồn). Tuy nhiên sau khi kinh qua thì mình thấy việc chuẩn bị cũng rất bình thường, và thay vì
+        </p>
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Shaken, 車検, hay hiểu nôm na là Kiểm định xe, là việc bắt buộc phải làm 2 năm 1 lần với xe cũ (đối với xe mới là 3 năm sau khi đăng ký, và từ đó 2 năm/lần).
+Ấn tượng ban đầu của mình về vụ này là … cực kì phiền toái và tốn kém (giang hồ đồn). Tuy nhiên sau khi kinh qua thì mình thấy việc chuẩn bị cũng rất bình thường, và thay vì
 vác xe ra dịch vụ, bạn hoàn toàn có thể tự làm và tiết kiệm kha khá tiền vào việc khác. Trong lúc vẫn còn nhớ mình tranh thủ ghi lại những gì đã trải qua để 2 năm nữa đặng còn dùng tiếp :v</p>
 
-<h1>Các giấy tờ cần chuẩn bị</h1>
+<h1 id="cc-giy-t-cn-chun-b">Các giấy tờ cần chuẩn bị</h1>
 
 <ul>
-<li>1 自動車検査証</li>
-<li>2 自動車税納税証明書</li>
-<li>3 <a href="http://annai-center.com/pdf/kirokubo.pdf">点検整備記録簿</a></li>
-<li>4 自賠責保険（共済）証明書</li>
-<li>5 自動車重量税納付書・印紙</li>
-<li>6 継続検査申請書</li>
-<li>7 自動車検査票・手数料納付書・印紙・証紙</li>
+  <li>1 自動車検査証</li>
+  <li>2 自動車税納税証明書</li>
+  <li>3 <a href="http://annai-center.com/pdf/kirokubo.pdf">点検整備記録簿</a></li>
+  <li>4 自賠責保険（共済）証明書</li>
+  <li>5 自動車重量税納付書・印紙</li>
+  <li>6 継続検査申請書</li>
+  <li>7 自動車検査票・手数料納付書・印紙・証紙</li>
 </ul>
-
 
 <p>Trong tất cả các giấy tờ trên, số (1, 3) là nên chuẩn bị trước ở nhà, các giấy tờ còn lại có thể lấy hoặc mua ở Trung tâm kiểm định.</p>
 
-<h2>1. 自動車検査証 (Jidousha kensashou)</h2>
+<ol>
+  <li>
+    <h2 id="jidousha-kensashou">自動車検査証 (Jidousha kensashou)</h2>
+    <p>Giấy đăng ký xe, mặc định là có sẵn. Trên giấy ghi chủ xe, ngày tháng đăng ký xe, ngày hết Shaken, số thân xe, loại xe… Các thông tin trên kensashou là cực kì cần thiết để làm các giấy tờ khác.</p>
+  </li>
+  <li>
+    <h2 id="jidoushazei-nouzeishoumeisho">自動車税納税証明書 (Jidoushazei nouzeishoumeisho)</h2>
+    <p>Giấy chứng nhận nộp thuế xe, mua theo từng năm và hết hạn vào cuối tháng 5 mỗi năm. Giấy này lấy ở Máy tự động ở cạnh quầy nộp thuế tải trọng xe (ngay gần cửa ra vào)</p>
+  </li>
+  <li>
+    <h2 id="tenkenseibi-kirokubo">点検整備記録簿 (Tenkenseibi kirokubo)</h2>
+    <p>Bản ghi kết quả đánh giá kiểm tra xe (tự làm) gồm 60 mục. Kinh nghiệm của mình là ra cây xăng nào đó nhờ họ kiểm tra qua (miễn phí) vài thứ như ắc qui, dầu thắng, nước làm mát, nước rửa kính, chảy dầu, cân chỉnh lại áp suất hơi của lốp… Có thể đi qua 2, 3 tiệm để được double-check miễn phí :v Còn các mục khác cần kiểm tra, nếu bạn không biết thì nên tìm tới ai có tay nghề một chút nhờ xem hộ hoặc mang ra tiệm (mất tiền hoặc khá nhiều tiền :v). Trong trường hợp của mình vì trong quá trình đi xe chưa thấy hiện tượng lạ nên đánh dấu OK hết các mục đấy :v.</p>
+  </li>
+  <li>
+    <h2 id="jibaisekihoken-shoumeisho">自賠責保険（共済）証明書 (Jibaisekihoken shoumeisho)</h2>
+    <p>Giấy chứng nhận mua bảo hiểm bắt buộc. Tuỳ tải trọng &amp; tuổi của xe mà số tiền sẽ khác nhau. Trong trường hợp xe mình là 27840 yen.</p>
+  </li>
+  <li>
+    <h2 id="jidousha-jyuuryouzei-noufusho">自動車重量税納付書・印紙 (Jidousha jyuuryouzei noufusho)</h2>
+    <p>Chứng nhận nộp thuế tải trọng xe. Mẫu lấy ở quầy làm User shaken, điền các thông tin và mua tem để dán ở quầy số 12. Xe mình mất 16000 yen.</p>
+  </li>
+  <li>
+    <h2 id="keizoku-kensashinseisho">継続検査申請書 (Keizoku kensashinseisho)</h2>
+    <p>Mẫu đăng ký làm mới Shaken. Mua ở quầy số 19 (giá 30 yen). Điền thông tin về xe bằng bút chì và thông tin về chủ sở hữu, người nộp đơn bằng bút bi.</p>
+  </li>
+  <li>
+    <h2 id="jidousha-kensahyou-tesuuryounoufusho">自動車検査票・手数料納付書・印紙・証紙 (Jidousha kensahyou tesuuryounoufusho)</h2>
+    <p>Mẫu kiểm tra, lấy ở quầy User shaken (miễn phí), sau đó mua tem ở quầy số 12 (nơi nộp thuế tải trọng), hết tất cả 1700 yen.</p>
+  </li>
+</ol>
 
-<p>Giấy đăng ký xe, mặc định là có sẵn. Trên giấy ghi chủ xe, ngày tháng đăng ký xe, ngày hết Shaken, số thân xe, loại xe&hellip; Các thông tin trên kensashou là cực kì cần thiết để làm các giấy tờ khác.</p>
-
-<h2>2. 自動車税納税証明書 (Jidoushazei nouzeishoumeisho)</h2>
-
-<p>Giấy chứng nhận nộp thuế xe, mua theo từng năm và hết hạn vào cuối tháng 5 mỗi năm. Giấy này lấy ở Máy tự động ở cạnh quầy nộp thuế tải trọng xe (ngay gần cửa ra vào)</p>
-
-<h2>3. 点検整備記録簿 (Tenkenseibi kirokubo)</h2>
-
-<p>Bản ghi kết quả đánh giá kiểm tra xe (tự làm) gồm 60 mục. Kinh nghiệm của mình là ra cây xăng nào đó nhờ họ kiểm tra qua (miễn phí) vài thứ như ắc qui, dầu thắng, nước làm mát, nước rửa kính, chảy dầu, cân chỉnh lại áp suất hơi của lốp&hellip; Có thể đi qua 2, 3 tiệm để được double-check miễn phí :v Còn các mục khác cần kiểm tra, nếu bạn không biết thì nên tìm tới ai có tay nghề một chút nhờ xem hộ hoặc mang ra tiệm (mất tiền hoặc khá nhiều tiền :v). Trong trường hợp của mình vì trong quá trình đi xe chưa thấy hiện tượng lạ nên đánh dấu OK hết các mục đấy :v.</p>
-
-<h2>4. 自賠責保険（共済）証明書 (Jibaisekihoken shoumeisho)</h2>
-
-<p>Giấy chứng nhận mua bảo hiểm bắt buộc. Tuỳ tải trọng &amp; tuổi của xe mà số tiền sẽ khác nhau. Trong trường hợp xe mình là 27840 yen.</p>
-
-<h2>5. 自動車重量税納付書・印紙 (Jidousha jyuuryouzei noufusho)</h2>
-
-<p>Chứng nhận nộp thuế tải trọng xe. Mẫu lấy ở quầy làm User shaken, điền các thông tin và mua tem để dán ở quầy số 12. Xe mình mất 16000 yen.</p>
-
-<h2>6. 継続検査申請書 (Keizoku kensashinseisho)</h2>
-
-<p>Mẫu đăng ký làm mới Shaken. Mua ở quầy số 19 (giá 30 yen). Điền thông tin về xe bằng bút chì và thông tin về chủ sở hữu, người nộp đơn bằng bút bi.</p>
-
-<h2>7. 自動車検査票・手数料納付書・印紙・証紙 (Jidousha kensahyou tesuuryounoufusho)</h2>
-
-<p>Mẫu kiểm tra, lấy ở quầy User shaken (miễn phí), sau đó mua tem ở quầy số 12 (nơi nộp thuế tải trọng), hết tất cả 1700 yen.</p>
-
-<h1>Các bước làm</h1>
+<h1 id="cc-bc-lm">Các bước làm</h1>
 
 <ul>
-<li>Kiểm tra xe</li>
-<li><a href="https://www.yoyaku.navi.go.jp">Đăng ký kiểm tra tại Trung tâm</a>. Do 1 ngày có 4 round, sáng 2, chiều 2 nên tốt nhất nên đăng ký từ sáng, để nếu lỡ trượt thì đi làm lại luôn trong ngày được. Được phép đăng ký từ 14 ngày trước khi kiểm tra.</li>
-<li>Chuẩn bị các giấy tờ cần thiết, chờ đến ngày thì đánh xe lên Trung tâm (北陸信越運輸局石川運輸支局総務企画部門 3 Chome-153 Irie Kanazawa, Ishikawa 921-8011)</li>
+  <li>Kiểm tra xe</li>
+  <li><a href="https://www.yoyaku.navi.go.jp">Đăng ký kiểm tra tại Trung tâm</a>. Do 1 ngày có 4 round, sáng 2, chiều 2 nên tốt nhất nên đăng ký từ sáng, để nếu lỡ trượt thì đi làm lại luôn trong ngày được. Được phép đăng ký từ 14 ngày trước khi kiểm tra.</li>
+  <li>Chuẩn bị các giấy tờ cần thiết, chờ đến ngày thì đánh xe lên Trung tâm (北陸信越運輸局石川運輸支局総務企画部門 3 Chome-153 Irie Kanazawa, Ishikawa 921-8011)</li>
 </ul>
 
-
-<h1>Thực tế</h1>
+<h1 id="thc-t">Thực tế</h1>
 
 <p>Do lần đầu nên mình mất khá nhiều thời gian chuẩn bị các giấy tờ còn thiếu (gần 1 tiếng). Nếu có kinh nghiệm thì chắc chỉ mất 15p là xong. Giả sử đã có trong tay giấy số (1, 3) thì thứ tự các việc cần làm là:</p>
 
 <ul>
-<li>Ra quầy User shaken lấy mẫu số (2, 5, 7) và điền các thông tin cần thiết (theo mẫu hướng dẫn có sẵn). Chú ý là phải viết bằng tiếng Nhật.</li>
-<li>Mua mẫu số 6 ở quầy 19</li>
-<li>Mua bảo hiểm bắt buộc ở quầy đối diện quầy 19 (có ghi chữ 保険)</li>
-<li>Sang quầy số 12 đóng thuế tải trọng, mua tem đăng ký 1700 yen.</li>
-<li>Ra máy tự động lấy chứng nhận nộp thuế xe</li>
-<li>Cuối cùng mang tất cả giấy tờ về nộp ở quầy User shaken. Tại đây họ sẽ kiểm tra và nếu các giấy tờ đã xong xuôi thì việc tiếp theo là đánh xe vào hàng chờ :P</li>
+  <li>Ra quầy User shaken lấy mẫu số (2, 5, 7) và điền các thông tin cần thiết (theo mẫu hướng dẫn có sẵn). Chú ý là phải viết bằng tiếng Nhật.</li>
+  <li>Mua mẫu số 6 ở quầy 19</li>
+  <li>Mua bảo hiểm bắt buộc ở quầy đối diện quầy 19 (có ghi chữ 保険)</li>
+  <li>Sang quầy số 12 đóng thuế tải trọng, mua tem đăng ký 1700 yen.</li>
+  <li>Ra máy tự động lấy chứng nhận nộp thuế xe</li>
+  <li>Cuối cùng mang tất cả giấy tờ về nộp ở quầy User shaken. Tại đây họ sẽ kiểm tra và nếu các giấy tờ đã xong xuôi thì việc tiếp theo là đánh xe vào hàng chờ :P</li>
 </ul>
 
-
-<p>Thời gian chờ đợi để được vào kiểm tra khá lâu, mất khoảng 1 tiếng. Đang vẩn vơ suy nghĩ thì có một bác kiểm tra viên tới hỏi giấy tờ. Chắc thấy mặt ngu ngu nên được hỏi luôn câu &ldquo;Lần đầu à?&rdquo;, cũng có lẽ vì thế nên mình được hướng dẫn tận tình hơn. Đầu tiên là giai đoạn kiểm tra thủ công, họ sẽ mở capo, kiểm tra lốp, ốc, đèn sương mù, cốt, pha, xi nhan. Do thấy mình ngu ngơ quá (mà có lẽ ngu thật) nên các bạn kiểm tra viên làm hộ luôn các thao tác như kiểm tra còi :v Sau bước này là chuẩn bị vào kiểm tra bằng máy. Lần này bác kiểm tra viên cũng tận tình đi cùng luôn. Về cơ bản vào đây thấy hơi run tí, vì máy thì không du di như người roài. Thôi cứ nhắm mắt làm liều. Có thể tóm tắt cơ bản như sau:</p>
+<p>Thời gian chờ đợi để được vào kiểm tra khá lâu, mất khoảng 1 tiếng. Đang vẩn vơ suy nghĩ thì có một bác kiểm tra viên tới hỏi giấy tờ. Chắc thấy mặt ngu ngu nên được hỏi luôn câu “Lần đầu à?”, cũng có lẽ vì thế nên mình được hướng dẫn tận tình hơn. Đầu tiên là giai đoạn kiểm tra thủ công, họ sẽ mở capo, kiểm tra lốp, ốc, đèn sương mù, cốt, pha, xi nhan. Do thấy mình ngu ngơ quá (mà có lẽ ngu thật) nên các bạn kiểm tra viên làm hộ luôn các thao tác như kiểm tra còi :v Sau bước này là chuẩn bị vào kiểm tra bằng máy. Lần này bác kiểm tra viên cũng tận tình đi cùng luôn. Về cơ bản vào đây thấy hơi run tí, vì máy thì không du di như người roài. Thôi cứ nhắm mắt làm liều. Có thể tóm tắt cơ bản như sau:</p>
 
 <ul>
-<li>Kiểm tra đèn pha (hoặc cốt, do mình chọn)</li>
-<li>Phanh tay (kéo hết cỡ, mạnh hơn bình thường vẫn làm tới &hellip; vài chục lần :v)</li>
-<li>Tăng tốc tới 40km</li>
-<li>Phanh chân</li>
+  <li>Kiểm tra đèn pha (hoặc cốt, do mình chọn)</li>
+  <li>Phanh tay (kéo hết cỡ, mạnh hơn bình thường vẫn làm tới … vài chục lần :v)</li>
+  <li>Tăng tốc tới 40km</li>
+  <li>Phanh chân</li>
 </ul>
-
 
 <p>Sau bước này là bước kiểm tra khí thải. Xuống xe đứng chờ. Tiếp theo lại lên xe, đánh vào vị trí để cho 1 kiểm tra viên kiểm tra gầm xe. Anh này sẽ yêu cầu mình đạp phanh chân, kéo phanh tay, đánh vô lăng. Do (may mắn) qua tất các test nên cuối cùng việc cần làm chỉ là (1) đánh xe dừng trước vạch (2) đem phiếu số 7 cho vào máy đọc bên tay phải (ngay gần đấy) (3) mang hồ sơ sang bốt bên trái để được đóng dấu. Vì cũng hồi hộp nên không để ý thời gian lắm, chắc mất tầm 20p tất cả. Sau khi ra khỏi line, mang giấy tờ về nộp ở quầy User Shaken và chờ nhận chứng nhận Shaken mới. Một cảm giác rất Yomost :v</p>
 
-<h1>Tổng kết</h1>
-
+<h1 id="tng-kt">Tổng kết</h1>
 <p>Toàn bộ thời gian từ lúc làm giấy tờ cho tới lúc kiểm tra xong là 3 tiếng. Tổng chi  là ~47000 yen (thấp hơn kha khá so với sử dụng dịch vụ). Cái được lớn nhất là tìm hiểu thêm được vài thứ về xe và cảm giác Yomost khi đỗ :v Quả thật may mắn vì đang bận vãi đít mà có thể kết thúc một việc cần phải làm trong thời gian khá ngắn :))</p>
+</div>
+  
+  
 
+
+      <footer>
       
+      - <a href="/blog/2014/03/18/user-shaken/">User shaken, it isn&#8217;t that scary</a>
+      <time datetime="2014-03-18T00:58:19+09:00" pubdate><span class='month'>Mar</span> <span class='day'>18</span> <span class='year'>2014</span></time>
       
-    </div>
-  </div>
-
-
-
+      </footer>
     </article>
-    
   
   <div class="pagination">
     
-
+    <a href="/archives">Blog Archives</a>
     
-  </div>
+  </div><!-- /div.pagination -->
+</div><!-- /div.blog-index -->
+
+      </div><!-- /div#content -->
+    </div><!-- /div#main -->
+  </div><!-- /div.container -->
+  <footer><div id="footer-widgets-wrapper">
+  <div id="footer-first" class="footer-widget">
+    <h3>About Me</h3>
+    <section class="about-me">
+      
+      <div>
+        <ul>
+          
+          
+            <li>Blog: <a href="http://potm.github.io">http://potm.github.io</a></li>
+        </ul>
+        <p>
+          V!mm!shment Th!s World!
+        </p>
+      </div>
+    </section>
+  </div><!-- /div#footer-second -->
+
+  <div id="footer-second" class="footer-widget">
+    <h3>Recent Posts</h3>
+    <section id="hatena-popular" class="hatena-bookmark">
+      <script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+      <script language="javascript" type="text/javascript">
+        Hatena.BookmarkWidget.url   = "http://potm.github.io";
+        Hatena.BookmarkWidget.title = "Recent Posts";
+        Hatena.BookmarkWidget.sort  = "hot";
+        Hatena.BookmarkWidget.width = 0;
+        Hatena.BookmarkWidget.num   = 10;
+        Hatena.BookmarkWidget.theme = "notheme";
+        Hatena.BookmarkWidget.load();
+      </script>
+    </section>
+  </div><!-- /div#footer-second -->
+
+  <div id="footer-third" class="footer-widget">
+    <h3>Popular Posts</h3>
+    <section id="hatena-popular" class="hatena-bookmark">
+      <script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
+      <script language="javascript" type="text/javascript">
+        Hatena.BookmarkWidget.url   = "http://potm.github.io";
+        Hatena.BookmarkWidget.title = "Popular Posts";
+        Hatena.BookmarkWidget.sort  = "count";
+        Hatena.BookmarkWidget.width = 0;
+        Hatena.BookmarkWidget.num   = 10;
+        Hatena.BookmarkWidget.theme = "notheme";
+        Hatena.BookmarkWidget.load();
+      </script>
+    </section>
+  </div><!-- /div#footer-third -->
+</div><!-- /div#footer-widgets-wrapper -->
+
+<div id="credit" role="contentinfo">
+  <p>
+    Copyright &copy; 2015 - <a href="https://github.com/Moon/">Moon</a> -
+    <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/haya14busa/mjolvim-octotheme">Mjolvim</a></span>
+  </p>
 </div>
 
-
-        </div>
-      </div>
-      <div class="row-fluid">
-        <footer class="footer-page" role="contentinfo">
-          <p>
-  Copyright &copy; 2014 - Moon -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - Theme by <a href="http://alexgaribay.com">Alex Garibay</a>
-</p>
-
-
-        </footer>
-      </div>
-  </div>
+</footer>
   
 
 <script type="text/javascript">
@@ -865,6 +935,18 @@ vác xe ra dịch vụ, bạn hoàn toàn có thể tự làm và tiết kiệm 
 </script>
 
 
+
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
