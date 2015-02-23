@@ -9,8 +9,8 @@
   <meta name="author" content="Moon">
 
   
-  <meta name="description" content="Execute this 1
-export LC_ALL=C find . -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | xargs -0 sed -i &#39;&#39; -E &quot;s/[[: &hellip;">
+  <meta name="description" content="I need to recover the guest’kvm root password. I plan to boot into Single mode
+to change the password at first. However, there is a much faster way &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,102 @@ export LC_ALL=C find . -not \( -name .svn -prune -o -name .git -prune \) -type f
       <div id="content">
         <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/23/reset-root-password-kvm-guest/">Reset Root Password Kvm Guest</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-02-23T18:12:03+09:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2015</time> -</span>
+          
+          | <a href="/blog/2015/02/23/reset-root-password-kvm-guest/#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I need to recover the guest’kvm root password. I plan to boot into Single mode
+to change the password at first. However, there is a much faster way to do it.</p>
+
+<ul>
+  <li>Shutdown the vm</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">virsh shutdown <span class="c">#{kvm_name}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Mount the filesystem inside the image</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo kpartx -av /var/lib/libvirt/images/#<span class="o">{</span>kmv_file<span class="o">}</span>.img
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>
+    <p>The filesystem should be mounted as <code>/dev/mapper/loopX</code>, which actually (in my case)
+is a link to <code>/dev/dm-X</code> (X is a number)</p>
+  </li>
+  <li>
+    <p>The last step is simple</p>
+  </li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo mount /dev/dm-X /mnt
+</span><span class="line">sudo vim /mnt/etc/shadow
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>find the line which contains your username, then change it like below, from</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username:<span class="o">{</span><span class="c">#a_very_long_string}:16489:0:99999:7:::</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>to</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username::16489:0:99999:7:::
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Reboot the kvm and you’re done</li>
+</ul>
+</div>
+  
+  
+
+
+      <footer>
+      
+      - <a href="/blog/2015/02/23/reset-root-password-kvm-guest/">Reset root password kvm guest</a>
+      <time datetime="2015-02-23T18:12:03+09:00" pubdate><span class='month'>Feb</span> <span class='day'>23</span> <span class='year'>2015</span></time>
+      
+      </footer>
+    </article>
   
   
     <article>

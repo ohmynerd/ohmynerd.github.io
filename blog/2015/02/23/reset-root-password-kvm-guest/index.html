@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="ja"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Moonwell</title>
+  <title>Reset root password kvm guest - Moonwell</title>
   <meta name="author" content="Moon">
 
   
-  <meta name="description" content="Blog Archive 2015 Reset root password kvm guest
-Feb 23 2015 2014 Go go away trailing spaces
-Jul 15 2014 I&#8217;m a MySQL noob
-Jun 09 2014 Update &hellip;">
+  <meta name="description" content="I need to recover the guest’kvm root password. I plan to boot into Single mode
+to change the password at first. However, there is a much faster way &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@ Jun 09 2014 Update &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://potm.github.io/blog/archives/">
+  <link rel="canonical" href="http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Moonwell" type="application/atom+xml">
@@ -77,215 +75,143 @@ Jun 09 2014 Update &hellip;">
     <div id="main">
       <div id="content">
         <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title"><a href="">Blog Archive</a></h1>
+    
+      <h1 class="entry-title"><a href="">Reset Root Password Kvm Guest</a></h1>
+    
+    
+      <div class="post-meta">
+        <p class="meta">
+          <span class="timestamp">- 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-02-23T18:12:03+09:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2015</time> -</span>
+          
+          | <a href="#disqus_thread">Comments</a>
+          
+        </p>
+      </div>
     
   </header>
-  
-  <div clas id="blog-archives">
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	  
-	    <h1>2015</h1>
-	
-	</div>
-	
-	<div class="span11">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2015/02/23/reset-root-password-kvm-guest/">Reset root password kvm guest</a></h1>
-<time datetime="2015-02-23T18:12:03+09:00" pubdate><span class='month'>Feb</span> <span class='day'>23</span> <span class='year'>2015</span></time>
 
 
-	  </article>
-	</div>
-  </div>
+<div class="entry-content"><p>I need to recover the guest’kvm root password. I plan to boot into Single mode
+to change the password at first. However, there is a much faster way to do it.</p>
 
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	  
-	    <h1>2014</h1>
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
+<ul>
+  <li>Shutdown the vm</li>
+</ul>
 
-	  <article>
-	  
-<h1><a href="/blog/2014/07/15/go-go-away-trailing-spaces/">Go go away trailing spaces</a></h1>
-<time datetime="2014-07-15T15:05:21+09:00" pubdate><span class='month'>Jul</span> <span class='day'>15</span> <span class='year'>2014</span></time>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">virsh shutdown <span class="c">#{kvm_name}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<ul>
+  <li>Mount the filesystem inside the image</li>
+</ul>
 
-	  </article>
-	</div>
-  </div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo kpartx -av /var/lib/libvirt/images/#<span class="o">{</span>kmv_file<span class="o">}</span>.img
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
+<ul>
+  <li>
+    <p>The filesystem should be mounted as <code>/dev/mapper/loopX</code>, which actually (in my case)
+is a link to <code>/dev/dm-X</code> (X is a number)</p>
+  </li>
+  <li>
+    <p>The last step is simple</p>
+  </li>
+</ul>
 
-	  <article>
-	  
-<h1><a href="/blog/2014/06/09/im-a-mysql-noob/">I&#8217;m a MySQL noob</a></h1>
-<time datetime="2014-06-09T13:05:50+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2014</span></time>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo mount /dev/dm-X /mnt
+</span><span class="line">sudo vim /mnt/etc/shadow
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>find the line which contains your username, then change it like below, from</p>
 
-	  </article>
-	</div>
-  </div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username:<span class="o">{</span><span class="c">#a_very_long_string}:16489:0:99999:7:::</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
+<p>to</p>
 
-	  <article>
-	  
-<h1><a href="/blog/2014/05/23/update-gitlab/">Update Gitlab</a></h1>
-<time datetime="2014-05-23T17:25:07+09:00" pubdate><span class='month'>May</span> <span class='day'>23</span> <span class='year'>2014</span></time>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username::16489:0:99999:7:::
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/04/11/passenger-standalone-in-development-mode/">Passenger Standalone in development mode</a></h1>
-<time datetime="2014-04-11T09:43:17+09:00" pubdate><span class='month'>Apr</span> <span class='day'>11</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/04/09/sync-remote-folder/">Sync remote folder</a></h1>
-<time datetime="2014-04-09T09:47:56+09:00" pubdate><span class='month'>Apr</span> <span class='day'>09</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/04/08/openssl-heartbleed-and-update-fixes/">OpenSSL Heartbleed &amp; update fixes</a></h1>
-<time datetime="2014-04-08T10:06:45+09:00" pubdate><span class='month'>Apr</span> <span class='day'>08</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/">Ubuntu 12.04 + update git</a></h1>
-<time datetime="2014-04-04T09:01:23+09:00" pubdate><span class='month'>Apr</span> <span class='day'>04</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/">vagrant w/NFS &amp; Passenger</a></h1>
-<time datetime="2014-03-25T16:12:26+09:00" pubdate><span class='month'>Mar</span> <span class='day'>25</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
-  
-  <div class="row-fluid">
-	<div class="span1">
-	
-	</div>
-	
-	<div class="span11 border-top">
-	
-
-	  <article>
-	  
-<h1><a href="/blog/2014/03/18/user-shaken/">User shaken, it isn&#8217;t that scary</a></h1>
-<time datetime="2014-03-18T00:58:19+09:00" pubdate><span class='month'>Mar</span> <span class='day'>18</span> <span class='year'>2014</span></time>
-
-
-	  </article>
-	</div>
-  </div>
-
+<ul>
+  <li>Reboot the kvm and you’re done</li>
+</ul>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Moon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-02-23T18:12:03+09:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2015</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/" data-via="" data-counturl="http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/15/go-go-away-trailing-spaces/" title="Previous Post: Go go away trailing spaces">&laquo; Go go away trailing spaces</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -358,7 +284,10 @@ Jun 09 2014 Update &hellip;">
       var disqus_shortname = 'beastmasterblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/';
+        var disqus_url = 'http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

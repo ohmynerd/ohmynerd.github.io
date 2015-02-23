@@ -4,7 +4,7 @@
   <title><![CDATA[Moonwell]]></title>
   <link href="http://potm.github.io/atom.xml" rel="self"/>
   <link href="http://potm.github.io/"/>
-  <updated>2015-01-21T18:38:18+09:00</updated>
+  <updated>2015-02-23T18:26:18+09:00</updated>
   <id>http://potm.github.io/</id>
   <author>
     <name><![CDATA[Moon]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Reset root password kvm guest]]></title>
+    <link href="http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/"/>
+    <updated>2015-02-23T18:12:03+09:00</updated>
+    <id>http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest</id>
+    <content type="html"><![CDATA[<p>I need to recover the guest’kvm root password. I plan to boot into Single mode
+to change the password at first. However, there is a much faster way to do it.</p>
+
+<ul>
+  <li>Shutdown the vm</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">virsh shutdown <span class="c">#{kvm_name}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Mount the filesystem inside the image</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo kpartx -av /var/lib/libvirt/images/#<span class="o">{</span>kmv_file<span class="o">}</span>.img
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>
+    <p>The filesystem should be mounted as <code>/dev/mapper/loopX</code>, which actually (in my case)
+is a link to <code>/dev/dm-X</code> (X is a number)</p>
+  </li>
+  <li>
+    <p>The last step is simple</p>
+  </li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo mount /dev/dm-X /mnt
+</span><span class="line">sudo vim /mnt/etc/shadow
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>find the line which contains your username, then change it like below, from</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username:<span class="o">{</span><span class="c">#a_very_long_string}:16489:0:99999:7:::</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>to</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">username::16489:0:99999:7:::
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Reboot the kvm and you’re done</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Go go away trailing spaces]]></title>
