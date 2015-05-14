@@ -1,63 +1,65 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://potm.github.io/blog/2014/03/18/user-shaken/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/03/18/user-shaken/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/04/09/sync-remote-folder/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/04/09/sync-remote-folder/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/</loc>
+        <loc>
+            http://ohmynerd.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/
+        </loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/05/23/update-gitlab/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/05/23/update-gitlab/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/06/09/im-a-mysql-noob/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/06/09/im-a-mysql-noob/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/</loc>
+        <loc>http://ohmynerd.github.io/blog/2014/07/15/go-go-away-trailing-spaces/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/</loc>
+        <loc>http://ohmynerd.github.io/blog/2015/02/23/reset-root-password-kvm-guest/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/archives/</loc>
+        <loc>http://ohmynerd.github.io/archives/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/blog/archives/</loc>
+        <loc>http://ohmynerd.github.io/blog/archives/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/</loc>
+        <loc>http://ohmynerd.github.io/</loc>
         <lastmod>2015-02-23T18:46:51+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/robots.txt</loc>
+        <loc>http://ohmynerd.github.io/robots.txt</loc>
         <lastmod>2015-02-23T18:46:51+09:00</lastmod>
     </url>
     <url>
-        <loc>http://potm.github.io/whoami/</loc>
+        <loc>http://ohmynerd.github.io/whoami/</loc>
         <lastmod>2015-02-23T18:46:50+09:00</lastmod>
     </url>
 </urlset>

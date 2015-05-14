@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Moonwell]]></title>
-  <link href="http://potm.github.io/atom.xml" rel="self"/>
-  <link href="http://potm.github.io/"/>
-  <updated>2015-02-23T18:46:59+09:00</updated>
-  <id>http://potm.github.io/</id>
+  <link href="http://ohmynerd.github.io/atom.xml" rel="self"/>
+  <link href="http://ohmynerd.github.io/"/>
+  <updated>2015-05-14T09:53:54+09:00</updated>
+  <id>http://ohmynerd.github.io/</id>
   <author>
     <name><![CDATA[Moon]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Reset root password kvm guest]]></title>
-    <link href="http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest/"/>
+    <link href="http://ohmynerd.github.io/blog/2015/02/23/reset-root-password-kvm-guest/"/>
     <updated>2015-02-23T18:12:03+09:00</updated>
-    <id>http://potm.github.io/blog/2015/02/23/reset-root-password-kvm-guest</id>
+    <id>http://ohmynerd.github.io/blog/2015/02/23/reset-root-password-kvm-guest</id>
     <content type="html"><![CDATA[<p>I need to recover the guest’kvm root password. I plan to boot into Single mode
 to change the password at first. However, there is a much faster way to do it.</p>
 
@@ -73,9 +73,9 @@ is a link to <code>/dev/dm-X</code> (X is a number)</p>
   
   <entry>
     <title type="html"><![CDATA[Go go away trailing spaces]]></title>
-    <link href="http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/07/15/go-go-away-trailing-spaces/"/>
     <updated>2014-07-15T15:05:21+09:00</updated>
-    <id>http://potm.github.io/blog/2014/07/15/go-go-away-trailing-spaces</id>
+    <id>http://ohmynerd.github.io/blog/2014/07/15/go-go-away-trailing-spaces</id>
     <content type="html"><![CDATA[<p>Execute this</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -95,9 +95,9 @@ is a link to <code>/dev/dm-X</code> (X is a number)</p>
   
   <entry>
     <title type="html"><![CDATA[I'm a MySQL noob]]></title>
-    <link href="http://potm.github.io/blog/2014/06/09/im-a-mysql-noob/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/06/09/im-a-mysql-noob/"/>
     <updated>2014-06-09T13:05:50+09:00</updated>
-    <id>http://potm.github.io/blog/2014/06/09/im-a-mysql-noob</id>
+    <id>http://ohmynerd.github.io/blog/2014/06/09/im-a-mysql-noob</id>
     <content type="html"><![CDATA[<ul>
   <li>Install MySQL (Credit to http://www.macminivault.com/mysql-mavericks/)</li>
 </ul>
@@ -149,9 +149,9 @@ flush privileges;
   
   <entry>
     <title type="html"><![CDATA[Update Gitlab]]></title>
-    <link href="http://potm.github.io/blog/2014/05/23/update-gitlab/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/05/23/update-gitlab/"/>
     <updated>2014-05-23T17:25:07+09:00</updated>
-    <id>http://potm.github.io/blog/2014/05/23/update-gitlab</id>
+    <id>http://ohmynerd.github.io/blog/2014/05/23/update-gitlab</id>
     <content type="html"><![CDATA[<h2 id="gitlab-update">Gitlab update</h2>
 
 <p><strong>Last update: 2014/05/23 17:13 from 6.7 to 6.9-stable</strong></p>
@@ -220,9 +220,9 @@ flush privileges;
   
   <entry>
     <title type="html"><![CDATA[Passenger Standalone in development mode]]></title>
-    <link href="http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/04/11/passenger-standalone-in-development-mode/"/>
     <updated>2014-04-11T09:43:17+09:00</updated>
-    <id>http://potm.github.io/blog/2014/04/11/passenger-standalone-in-development-mode</id>
+    <id>http://ohmynerd.github.io/blog/2014/04/11/passenger-standalone-in-development-mode</id>
     <content type="html"><![CDATA[<p>Take from <code>http://www.modrails.com/documentation/Users%20guide%20Standalone.html#install_on_debian_ubuntu</code></p>
 
 <p>Adding APT repository
@@ -290,9 +290,9 @@ Install PGP key. Packages are signed by “Phusion Automated Software Signing (a
   
   <entry>
     <title type="html"><![CDATA[Sync remote folder]]></title>
-    <link href="http://potm.github.io/blog/2014/04/09/sync-remote-folder/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/04/09/sync-remote-folder/"/>
     <updated>2014-04-09T09:47:56+09:00</updated>
-    <id>http://potm.github.io/blog/2014/04/09/sync-remote-folder</id>
+    <id>http://ohmynerd.github.io/blog/2014/04/09/sync-remote-folder</id>
     <content type="html"><![CDATA[<p>Sometimes I need to get a copy of remote folder</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -325,9 +325,9 @@ Install PGP key. Packages are signed by “Phusion Automated Software Signing (a
   
   <entry>
     <title type="html"><![CDATA[OpenSSL Heartbleed &amp; update fixes]]></title>
-    <link href="http://potm.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes/"/>
     <updated>2014-04-08T10:06:45+09:00</updated>
-    <id>http://potm.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes</id>
+    <id>http://ohmynerd.github.io/blog/2014/04/08/openssl-heartbleed-and-update-fixes</id>
     <content type="html"><![CDATA[<p>Details here</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -354,9 +354,9 @@ Install PGP key. Packages are signed by “Phusion Automated Software Signing (a
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 12.04 + update git]]></title>
-    <link href="http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git/"/>
     <updated>2014-04-04T09:01:23+09:00</updated>
-    <id>http://potm.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git</id>
+    <id>http://ohmynerd.github.io/blog/2014/04/04/ubuntu-12-dot-04-plus-update-git</id>
     <content type="html"><![CDATA[<p>メモしておく</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -373,9 +373,9 @@ Install PGP key. Packages are signed by “Phusion Automated Software Signing (a
   
   <entry>
     <title type="html"><![CDATA[vagrant w/NFS &amp; Passenger]]></title>
-    <link href="http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger/"/>
     <updated>2014-03-25T16:12:26+09:00</updated>
-    <id>http://potm.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger</id>
+    <id>http://ohmynerd.github.io/blog/2014/03/25/vagrant-w-slash-nfs-and-passenger</id>
     <content type="html"><![CDATA[<p>Today I got strange bug when trying to start a Rails app. Passenger keeps trying to say</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>objdump nginx&#8217;s error log</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -413,9 +413,9 @@ Wish that I find the gist below sooner.</p>
   
   <entry>
     <title type="html"><![CDATA[User shaken, it isn't that scary]]></title>
-    <link href="http://potm.github.io/blog/2014/03/18/user-shaken/"/>
+    <link href="http://ohmynerd.github.io/blog/2014/03/18/user-shaken/"/>
     <updated>2014-03-18T00:58:19+09:00</updated>
-    <id>http://potm.github.io/blog/2014/03/18/user-shaken</id>
+    <id>http://ohmynerd.github.io/blog/2014/03/18/user-shaken</id>
     <content type="html"><![CDATA[<p>Shaken, 車検, hay hiểu nôm na là Kiểm định xe, là việc bắt buộc phải làm 2 năm 1 lần với xe cũ (đối với xe mới là 3 năm sau khi đăng ký, và từ đó 2 năm/lần).
 Ấn tượng ban đầu của mình về vụ này là … cực kì phiền toái và tốn kém (giang hồ đồn). Tuy nhiên sau khi kinh qua thì mình thấy việc chuẩn bị cũng rất bình thường, và thay vì
 vác xe ra dịch vụ, bạn hoàn toàn có thể tự làm và tiết kiệm kha khá tiền vào việc khác. Trong lúc vẫn còn nhớ mình tranh thủ ghi lại những gì đã trải qua để 2 năm nữa đặng còn dùng tiếp :v</p>
